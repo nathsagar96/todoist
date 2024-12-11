@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: stride
+  datasource:
+    url: jdbc:postgresql://localhost:5432/stride
+    username: user
+    password: password
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: create-drop
+  output:
+    ansi:
+      enabled: always
+  threads:
+    virtual:
+      enabled: true

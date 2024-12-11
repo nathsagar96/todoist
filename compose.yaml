@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: 'postgres:17-alpine'
+    environment:
+      - POSTGRES_DB=${POSTGRES_DB:-stride}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-password}
+      - POSTGRES_USER=${POSTGRES_USER:-user}
+    ports:
+      - '5432:5432'
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+volumes:
+  postgres-data:
