@@ -3,15 +3,18 @@ spring:
     name: stride
   datasource:
     url: jdbc:postgresql://localhost:5432/stride
-    username: user
-    password: password
+    username: postgres
+    password: changeit
   jpa:
-    open-in-view: false
+    defer-datasource-initialization: true
     hibernate:
       ddl-auto: create-drop
   output:
     ansi:
       enabled: always
+  sql:
+    init:
+      mode: always
   threads:
     virtual:
       enabled: true
